@@ -72,7 +72,7 @@ export default function RegisterPage() {
             />
           </div>
 
-          <button type="submit" disabled={isLoading} className="w-full rounded-md bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 disabled:opacity-50">
+          <button type="submit" disabled={isLoading} className="w-full rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 disabled:opacity-50">
             {isLoading ? "Mendaftarkan..." : "Daftar Sekarang"}
           </button>
         </form>

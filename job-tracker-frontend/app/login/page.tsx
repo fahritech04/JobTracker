@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "@/lib/axios";
 import { AxiosError } from "axios";
+import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -69,6 +70,13 @@ export default function LoginPage() {
             {isLoading ? "Memproses..." : "Masuk"}
           </button>
         </form>
+
+        <p className="text-center text-sm text-gray-600">
+          Belum punya akun?{" "}
+          <Link href="/register" className="font-semibold text-blue-600 hover:text-blue-500">
+            Daftar di sini
+          </Link>
+        </p>
       </div>
     </div>
   );
