@@ -10,7 +10,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password'])]
+// 1. Tambahkan 'role' di baris ini
+#[Fillable(['name', 'email', 'password', 'role'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -28,5 +29,16 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    // 2. Tambahkan fungsi relasi di bawah sini
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
+
+    public function notionIntegration()
+    {
+        return $this->hasOne(NotionIntegration::class);
     }
 }
